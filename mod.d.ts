@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,18 +16,22 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { float64ndarray, typedndarray } from '@stdlib/types/ndarray';
 
 /**
-* Return the first index of a search element in a one-dimensional double-precision floating-point ndarray.
+* Returns the first index of a search element in a one-dimensional double-precision floating-point ndarray.
 *
-* @module @stdlib/blas-ext-base-ndarray-dindex-of
+* @param arrays - array-like object containing a one-dimensional input ndarray, a zero-dimensional ndarray containing the search element, and a zero-dimensional ndarray containing the index from which to begin searching
+* @returns index
 *
 * @example
 * var Float64Array = require( '@stdlib/array-float64' );
 * var ndarray = require( '@stdlib/ndarray-base-ctor' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
-* var dindexOf = require( '@stdlib/blas-ext-base-ndarray-dindex-of' );
 *
 * var xbuf = new Float64Array( [ 1.0, 3.0, 4.0, 2.0 ] );
 * var x = new ndarray( 'float64', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
@@ -43,12 +47,9 @@
 * var v = dindexOf( [ x, searchElement, fromIndex ] );
 * // returns 3
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dindexOf( arrays: [ float64ndarray, typedndarray<number>, typedndarray<number> ] ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dindexOf;
